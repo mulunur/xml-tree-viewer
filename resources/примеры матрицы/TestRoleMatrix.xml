@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestPermissions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/_Work/Tasks/(2022-09-05_17-38-01).%D0%A6%D0%A1%D0%A3%D0%94/TestRoleMatrix.xsd">
+	<Tasks>
+		<Task name=""> <!-- ??? -->
+			<RoleRef name=""/><!--TaskLink (AzTask)-->
+			<RoleRef name=""/>
+			<ActionRef name=""/><!-- ??? -->
+			<ActionRef name=""/>
+		</Task>
+		<Task name="">
+		</Task>
+	</Tasks>
+	<Users>
+		<User s="S-1-5-21-1004336348-1177238915-682003330-512" c="C-220914203142-1177238915" k="K-idmz-esk-1177238915" t="T-7700-1004336348" 
+		userPrincipalName="accountName@domain.org" accountName="accountName" 
+		fio="Иванов И. И." surname="Иванов" name="Иван" patronymic="Иванович" 
+		tabNum="55667788" email="accountName@mail.domain.org" phone="+7 999 888 77 66" room="123" postCode="17" postName="инспектор" rankCode="13" rankName="ранг 1" subdivCode="42" subdivName="отдел 42"
+		region="77" ufns="7700" ifns="7701" divisionCode="1111" orgName="МРИ по крупнейшим налогоплательщикам г. Москвы"
+		dateIn="13.01.2000" dateOut="13.07.2020" restBegin="13.07.2019" restEnd="13.08.2019"
+		isFku="0" isCa="0" isMi="1" isService="0" isSubordinate="0" disabled="1"/>
+		<User s="S-1-5-21-288006714-2159811191-2066094697-38813" />
+		<CurrentUser />
+	</Users>
+	<Groups>
+		<Group name="">
+			<ContextRef code=""/>
+			<ContextRef code=""/>
+			<TaskRef name=""><!-- ??? -->
+				<ContextRef code=""/>
+				<ContextRef code=""/>
+			</TaskRef>
+			<TaskRef name=""/>
+			<UserRef s="S-1-5-21-1004336348-1177238915-682003330-512" c="C-220914203142-1177238915" k="K-idmz-esk-1177238915" t="T-7700-1004336348">
+				<ContextRef code=""/>
+				<ContextRef code=""/>
+			</UserRef>
+			<UserRef s="S-1-5-21-288006714-2159811191-2066094697-38813" />
+			<CurrentUserRef>
+				<ContextRef code=""/>
+				<ContextRef code=""/>
+			</CurrentUserRef>
+		</Group>
+		<Group name=""/>
+	</Groups>
+</TestPermissions>

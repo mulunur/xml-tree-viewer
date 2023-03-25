@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AzAdminManager MajorVersion="1" MinorVersion="0" Guid="2905a551-32f8-4100-ab21-53b355985ca7" Description="Ролевая матрица подсистемы общего назначения  Налоговый документооборот">
+	<AzApplication Guid="9c0472e7-0c1e-454b-8603-9feb5ac8476b" Name="TDF" Description="DisplayName=Подсистема общего назначения «Налоговый документооборот»;AppVersion=1.0.0.0">
+		<AzOperation Guid="6332bc7d-424c-4102-93fe-c4f6c03435bf" Name="BoxingOperation" Description="Операция комплектования тары">
+			<OperationID>2</OperationID>
+		</AzOperation>
+		<AzOperation Guid="ec8554d6-f9ee-4f87-8d3f-f5af977ba5ed" Name="DocumentRegistration" Description="Регистрация документов">
+			<OperationID>3</OperationID>
+		</AzOperation>
+		<AzOperation Guid="2239f31e-ab00-4259-9091-f0e5902eacaa" Name="ShipmentOperation" Description="Операция передачи документов ФКУ">
+			<OperationID>4</OperationID>
+		</AzOperation>
+		<AzOperation Guid="52f0faa5-c613-4daa-890f-104e6fbfa5f3" Name="ViewDocumentOperation" Description="Просмотр документа">
+			<OperationID>5</OperationID>
+		</AzOperation>
+		<AzOperation Guid="1182ab23-2430-499a-9368-389efe9d0645" Name="PrintDocLabelsOperation" Description="Печать этикеток документов">
+			<OperationID>6</OperationID>
+		</AzOperation>
+		<AzOperation Guid="65b76b8c-8bf1-4654-985b-0ea831078165" Name="PaperDocumentsViewOperation" Description="Мониторинг обработки документов">
+			<OperationID>7</OperationID>
+		</AzOperation>
+		<AzOperation Guid="2ad0c5e4-9b56-4e6c-aae3-63d36ecf6b62" Name="ViewContainerOperation" Description="Операция просмотра контейнера">
+			<OperationID>8</OperationID>
+		</AzOperation>
+		<AzOperation Guid="082748d4-923c-418c-bb42-7626dc01ecec" Name="FoldersViewOperation" Description="Мониторинг обработки тары">
+			<OperationID>9</OperationID>
+		</AzOperation>
+		<AzOperation Guid="18cedacd-b9de-42b2-ba08-a5bfbf8403d2" Name="DocumentsResponsesViewOperation" Description="Мониторинг отчётов обработки документов">
+			<OperationID>10</OperationID>
+		</AzOperation>
+		<AzOperation Guid="200ac4e7-d24a-495b-a9c2-4f77f398c3c5" Name="LegacyDocumentRegistrationOperation" Description="Регистрация документа УДиЭА в TDF">
+			<OperationID>11</OperationID>
+		</AzOperation>
+		<AzTask Guid="df75701f-e5a6-4550-a9c6-d2f5bc7efb8c" Name="DocumentBoxingOperator" Description="DisplayName=Оператор комплектования документов в тару;&lt;&lt;Оператор комплектования документов в тару&gt;&gt;" RoleDefinition="True">
+			<OperationLink>6332bc7d-424c-4102-93fe-c4f6c03435bf</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="648f455f-bda1-49ed-b5e5-533352381c07" Name="DocumentRegistrationRole" Description="DisplayName=Роль регистрации документов;&lt;&lt;Роль регистрации документов&gt;&gt;" RoleDefinition="True">
+			<OperationLink>ec8554d6-f9ee-4f87-8d3f-f5af977ba5ed</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="09513a31-407e-46fd-a716-9eba4cb68152" Name="DocumentShipmentOperator" Description="DisplayName=Оператор передачи документов ФКУ;&lt;&lt;Оператор передачи документов ФКУ&gt;&gt;" RoleDefinition="True">
+			<OperationLink>2239f31e-ab00-4259-9091-f0e5902eacaa</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="e368480b-ab8e-4ca9-bbdc-c568421ac13e" Name="ViewDocumentRole" Description="DisplayName=Роль просмотра документа;&lt;&lt;Роль просмотра документа&gt;&gt;" RoleDefinition="True">
+			<OperationLink>200ac4e7-d24a-495b-a9c2-4f77f398c3c5</OperationLink>
+			<OperationLink>2ad0c5e4-9b56-4e6c-aae3-63d36ecf6b62</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="e7760e4e-0dd6-450d-881d-4ddd6ecc510d" Name="PrintDocLabelsOperator" Description="DisplayName=Печать этикеток документов;&lt;&lt;Печать этикеток документов&gt;&gt;" RoleDefinition="True">
+			<OperationLink>1182ab23-2430-499a-9368-389efe9d0645</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="a3d00351-0890-4dbe-b1c8-d3119558ad69" Name="PaperDocumentsViewOperator" Description="DisplayName=Мониторинг обработки документов;&lt;&lt;Мониторинг обработки документов&gt;&gt;" RoleDefinition="True">
+			<OperationLink>65b76b8c-8bf1-4654-985b-0ea831078165</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="df7a6379-c596-43b2-9517-fa7e9ab40086" Name="FoldersViewOperator" Description="DisplayName=Мониторинг обработки тары;&lt;&lt;Мониторинг обработки тары&gt;&gt;" RoleDefinition="True">
+			<OperationLink>082748d4-923c-418c-bb42-7626dc01ecec</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="18f63d6a-61e2-447f-bfec-ac90c107a0a3" Name="DocumentsResponsesViewOperator" Description="DisplayName=Мониторинг отчётов обработки документов;&lt;&lt;Мониторинг отчётов обработки документов&gt;&gt;" RoleDefinition="True">
+			<OperationLink>18cedacd-b9de-42b2-ba08-a5bfbf8403d2</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="886ba1ab-139d-4fdb-a25a-0028686d8d4e" Name="ImagesInputTaskViewRole" Description="DisplayName=Мониторинг обработки заданий на ввод с образов документов;&lt;&lt;Мониторинг обработки заданий на ввод с образов документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>3aba12f9-4743-4edc-8b14-fa1f559a4df8</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="3aba12f9-4743-4edc-8b14-fa1f559a4df8" Name="ImagesInputTaskView" Description="Журнал обработки заданий на ввод с образов">
+			<OperationID>12</OperationID>
+		</AzOperation>
+		<AzOperation Guid="7ad01ac1-d234-4e92-a3b9-64fe35413ed9" Name="DpcExchangeMonitoring" Description="Мониторинг взаимодействия с АИС3 Налог-ЦОД">
+			<OperationID>13</OperationID>
+		</AzOperation>
+		<AzTask Guid="50e541f1-da66-4dff-a58f-99ecc1a03e9d" Name="DpcExchangeMonitoringRole" Description="DisplayName=Мониторинг взаимодействия с АИС3 Налог-ЦОД;&lt;&lt;Мониторинг взаимодействия с АИС3 Налог-ЦОД&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>7ad01ac1-d234-4e92-a3b9-64fe35413ed9</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="12f660e5-1f7e-4dfb-ac3c-0c4c2b317efb" Name="SelectiveScanRequestRole" Description="DisplayName=Запрос выборочного сканирования документов;&lt;&lt;Запрос выборочного сканирования документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>29b234ff-e5d6-4cf5-bb11-2208c75880b6</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="ca128dbe-8475-4f49-b55b-3e0b4f87f1ab" Name="ServiceIssueRequestRole" Description="DisplayName=Запрос ФКУ выдачи документов;&lt;&lt;Запрос ФКУ выдачи документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>3cb8c14c-5274-4580-8f7a-db05c134361a</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="29b234ff-e5d6-4cf5-bb11-2208c75880b6" Name="SelectiveScanRequestOperation" Description="Запрос выборочного сканирования документов">
+			<OperationID>14</OperationID>
+		</AzOperation>
+		<AzOperation Guid="3cb8c14c-5274-4580-8f7a-db05c134361a" Name="ServiceIssueRequestOperation" Description="Запрос ФКУ выдачи документов">
+			<OperationID>15</OperationID>
+		</AzOperation>
+		<AzOperation Guid="02c93044-fb24-444e-baf2-b411a820db4e" Name="ScanningOperation" Description="Операция сканирования документов">
+			<OperationID>16</OperationID>
+		</AzOperation>
+		<AzTask Guid="1f32ab4a-4451-4d89-85e1-e4032183036b" Name="ScanningRole" Description="DisplayName=Сканирование документов;&lt;&lt;Сканирование документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>02c93044-fb24-444e-baf2-b411a820db4e</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="dbf0976e-b6f2-4695-9666-8f4c4ac290f3" Name="StorageObjectsOperation" Description="Операция учёта объектов хранения">
+			<OperationID>17</OperationID>
+		</AzOperation>
+		<AzTask Guid="aa080684-9ac1-4e01-80b4-f17647e2e0aa" Name="StorageObjectsRole" Description="DisplayName=Объекты хранения;&lt;&lt;Объекты хранения&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>dbf0976e-b6f2-4695-9666-8f4c4ac290f3</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="40763e0a-9093-45f1-9aa1-eab0ebeb469d" Name="StorageObjectsMrpOperation" Description="Дела, переданные из МРП">
+			<OperationID>19</OperationID>
+		</AzOperation>
+		<AzTask Guid="127f7746-320a-445e-91e6-ea679fa9de48" Name="StorageObjectsMrpRole" Description="DisplayName=Дела, переданные из МРП;&lt;&lt;Дела, переданные из МРП&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>40763e0a-9093-45f1-9aa1-eab0ebeb469d</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="7b00da28-c6fc-4953-a248-709d0beda0fb" Name="ConformedContentViewOperation" Description="Операция просмотра электронных представлений документа">
+			<OperationID>20</OperationID>
+		</AzOperation>
+		<AzTask Guid="b030dccf-810e-4880-a493-1b400bc9c4e2" Name="ConformedContentRole" Description="DisplayName=Просмотр электронных представлений документа;&lt;&lt;Просмотр электронных представлений документа&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>7b00da28-c6fc-4953-a248-709d0beda0fb</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="ef497df9-7d76-4bc5-9b19-6247b0dad6bc" Name="MprOperation" Description="Операция для запуска форм почтовых отправлений">
+			<OperationID>21</OperationID>
+		</AzOperation>
+		<AzTask Guid="456afbc7-79d6-4a6f-90e2-75184730069b" Name="Mpr" Description="DisplayName=Массовая печать и рассылка;&lt;&lt;Управление процессом печати почтовых отправлений&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>ef497df9-7d76-4bc5-9b19-6247b0dad6bc</OperationLink>
+		</AzTask>
+		<AzOperation Guid="e838adac-74b2-461c-b6cc-50b655256e36" Name="ChownClaimCreateOperation" Description="Создание заявок на смену владельцев документов">
+			<OperationID>22</OperationID>
+		</AzOperation>
+		<AzOperation Guid="b29e3a7c-0fe2-447b-a07d-e78fee1d03c5" Name="ChownClaimEditOperation" Description="Редактирование списков документов заявок на смену владельцев">
+			<OperationID>23</OperationID>
+		</AzOperation>
+		<AzOperation Guid="5e07bdaa-62ca-4c3d-a260-a984e0099eb3" Name="ChownClaimApproveOperation" Description="Утверждение заявок на смену владельцев документов">
+			<OperationID>24</OperationID>
+		</AzOperation>
+		<AzOperation Guid="59b4d081-ebab-4fbb-af8d-f331fc2e9557" Name="ChownClaimConfirmOperation" Description="Согласование заявок на смену владельцев документов">
+			<OperationID>25</OperationID>
+		</AzOperation>
+		<AzTask Guid="84769a9b-4abe-48cb-8b79-1c6073dab3b5" Name="ChownClaimCreateRole" Description="DisplayName=Создание заявок на смену владельцев документов;&lt;&lt;Создание заявок на смену владельцев документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>b29e3a7c-0fe2-447b-a07d-e78fee1d03c5</OperationLink>
+			<OperationLink>e838adac-74b2-461c-b6cc-50b655256e36</OperationLink>
+			<OperationLink>80bd2962-3f69-4c6e-ac79-418a57980fde</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="04d0ad34-dae8-486e-b8da-395317a43e2e" Name="ChownClaimEditRole" Description="DisplayName=Редактирование списков документов заявок на смену владельцев;&lt;&lt;Редактирование списков документов заявок на смену владельцев&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>b29e3a7c-0fe2-447b-a07d-e78fee1d03c5</OperationLink>
+			<OperationLink>80bd2962-3f69-4c6e-ac79-418a57980fde</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="00e332ec-cd07-45e4-a947-a2ebc4db04c0" Name="ChownClaimApproveRole" Description="DisplayName=Утверждение заявок на смену владельцев документов;&lt;&lt;Утверждение заявок на смену владельцев документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>5e07bdaa-62ca-4c3d-a260-a984e0099eb3</OperationLink>
+			<OperationLink>b29e3a7c-0fe2-447b-a07d-e78fee1d03c5</OperationLink>
+			<OperationLink>e838adac-74b2-461c-b6cc-50b655256e36</OperationLink>
+			<OperationLink>80bd2962-3f69-4c6e-ac79-418a57980fde</OperationLink>
+			<OperationLink>9433e907-7a25-46ac-ac97-6dbf67c9985f</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="eee28700-93e8-47f7-9c05-6930ccdd4e94" Name="ChownClaimConfirmRole" Description="DisplayName=Согласование заявок на смену владельцев документов;&lt;&lt;Согласование заявок на смену владельцев документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>59b4d081-ebab-4fbb-af8d-f331fc2e9557</OperationLink>
+			<OperationLink>80bd2962-3f69-4c6e-ac79-418a57980fde</OperationLink>
+			<OperationLink>9433e907-7a25-46ac-ac97-6dbf67c9985f</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="80bd2962-3f69-4c6e-ac79-418a57980fde" Name="ChownClaimViewOperation" Description="Просмотр заявок на смену владельцев документов">
+			<OperationID>26</OperationID>
+		</AzOperation>
+		<AzTask Guid="f49a3f82-c7f1-4479-8e2f-b1e3b2cf9a54" Name="ChownClaimViewRole" Description="DisplayName=Просмотр заявок на смену владельцев документов;&lt;&lt;Просмотр заявок на смену владельцев документов&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>80bd2962-3f69-4c6e-ac79-418a57980fde</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="9433e907-7a25-46ac-ac97-6dbf67c9985f" Name="ChownClaimCuratorOperation" Description="Куратор заявок на смену владельцев документов">
+			<OperationID>27</OperationID>
+		</AzOperation>
+		<AzOperation Guid="980a8b15-ee86-46fb-9f17-edf506689fa3" Name="A01TrdOperation" Description="Передача исходящих документов на БН на отправку">
+			<OperationID>28</OperationID>
+		</AzOperation>
+		<AzTask Guid="61040997-3d5d-4b80-99f9-354b2d53baf9" Name="A01TrdRole" Description="DisplayName=Передача исходящих документов на БН на отправку;&lt;&lt;Передача исходящих документов на БН на отправку&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>980a8b15-ee86-46fb-9f17-edf506689fa3</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzOperation Guid="f274ace6-b14a-48a0-8af2-0b744cbc7c54" Name="DodDocumentsView" Description="Просмотр объектов хранения, не подлежащих хранению">
+			<OperationID>29</OperationID>
+		</AzOperation>
+		<AzOperation Guid="ad614f29-b552-4e02-b0a2-d275e4c55d32" Name="DodDocumentsPostpone" Description="Продление срока хранения документов, подлежащих уничтожению">
+			<OperationID>30</OperationID>
+		</AzOperation>
+		<AzOperation Guid="d47b27e9-ff5b-4fe7-99e5-0a0705294d6e" Name="DodDocumentsConfirm" Description="Акцептирование документов, подлежащих уничтожению">
+			<OperationID>31</OperationID>
+		</AzOperation>
+		<AzOperation Guid="318ba3f5-dc80-4398-9856-2d760dfe554e" Name="DodAssignmentAct" Description="Утверждение актов о выделении к уничтожению">
+			<OperationID>32</OperationID>
+		</AzOperation>
+		<AzTask Guid="94a3d63d-63cc-4856-82e4-517ccbe59544" Name="DodDocumentsViewRole" Description="DisplayName=Просмотр объектов хранения, не подлежащих хранению;&lt;&lt;Просмотр объектов хранения, не подлежащих хранению&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>f274ace6-b14a-48a0-8af2-0b744cbc7c54</OperationLink>
+			<TaskLink>e368480b-ab8e-4ca9-bbdc-c568421ac13e</TaskLink></AzTask>
+		<AzTask Guid="2904c3e0-7de6-4a65-a2f0-65e4e75c017f" Name="DodDocumentsPostponeRole" Description="DisplayName=Продление срока хранения документов, подлежащих уничтожению;&lt;&lt;Продление срока хранения документов, подлежащих уничтожению&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>ad614f29-b552-4e02-b0a2-d275e4c55d32</OperationLink>
+			<OperationLink>f274ace6-b14a-48a0-8af2-0b744cbc7c54</OperationLink>
+			<OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink>
+		</AzTask>
+		<AzTask Guid="b3e51e08-0a12-48af-90b0-b7a8f2fcebeb" Name="DodAssignmentActRole" Description="DisplayName=Утверждение актов о выделении к уничтожению;&lt;&lt;Утверждение актов о выделении к уничтожению&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>318ba3f5-dc80-4398-9856-2d760dfe554e</OperationLink>
+			<OperationLink>ad614f29-b552-4e02-b0a2-d275e4c55d32</OperationLink>
+			<OperationLink>d47b27e9-ff5b-4fe7-99e5-0a0705294d6e</OperationLink>
+			<OperationLink>f274ace6-b14a-48a0-8af2-0b744cbc7c54</OperationLink>
+			<TaskLink>e368480b-ab8e-4ca9-bbdc-c568421ac13e</TaskLink>
+		</AzTask>
+		<AzOperation Guid="322ae41c-1454-4188-a275-8bd7e93ed71c" Name="StorageObjectsPeriodOperation" Description="Редактирование срока хранения объектов хранения">
+			<OperationID>33</OperationID>
+		</AzOperation>
+		<AzTask Guid="29fce9d3-919d-424b-ab21-7b65a6b2d137" Name="StorageObjectsPeriodRole" Description="DisplayName=Редактирование срока хранения объектов хранения;&lt;&lt;Редактирование срока хранения объектов хранения&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>322ae41c-1454-4188-a275-8bd7e93ed71c</OperationLink>
+		</AzTask>
+		<AzOperation Guid="3ca2036a-db27-4514-af46-ac8bdbff6e1f" Name="A01MprTaskOperation" Description="Мониторинг взаимодействия по массовой печати и рассылке"><OperationID>34</OperationID></AzOperation><AzTask Guid="9e9f6833-fdb8-4dac-943c-65d181e2b22d" Name="A01MprTaskRole" Description="DisplayName=Мониторинг взаимодействия по массовой печати и рассылке;&lt;&lt;Мониторинг взаимодействия по массовой печати и рассылке&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>3ca2036a-db27-4514-af46-ac8bdbff6e1f</OperationLink></AzTask><AzOperation Guid="ba03d37a-48f3-4690-a6df-ed1036650680" Name="ReviseOperation" Description="Сверка данных о документах"><OperationID>35</OperationID></AzOperation><AzTask Guid="e028174d-ed81-44d1-83da-ca2d7947f0ec" Name="ReviseRole" Description="DisplayName=Сверка данных о документах;&lt;&lt;Сверка данных о документах&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink><OperationLink>ba03d37a-48f3-4690-a6df-ed1036650680</OperationLink></AzTask><AzOperation Guid="7abc504a-140e-4eaa-b908-3a34f5d3675d" Name="ReviseMonitoringOperation" Description="Мониторинг сверки данных о документах"><OperationID>36</OperationID></AzOperation><AzTask Guid="59279d25-1a3e-477a-b56c-9ae3bc359d7f" Name="ReviseMonitoringRole" Description="DisplayName=Мониторинг сверки данных о документах;&lt;&lt;Мониторинг сверки данных о документах&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink><OperationLink>7abc504a-140e-4eaa-b908-3a34f5d3675d</OperationLink><OperationLink>ba03d37a-48f3-4690-a6df-ed1036650680</OperationLink></AzTask><AzOperation Guid="35c51ba0-5c51-4c47-bc57-c7f258bf3335" Name="A01MprTaskAllOperation" Description="Централизованный мониторинг взаимодействия по массовой печати и рассылке"><OperationID>37</OperationID></AzOperation><AzTask Guid="a1f49e06-bd56-44d3-82d2-8828b22c635b" Name="A01MprTaskAllRole" Description="DisplayName=Централизованный мониторинг взаимодействия по массовой печати и рассылке;&lt;&lt;Централизованный мониторинг взаимодействия по массовой печати и рассылке&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>35c51ba0-5c51-4c47-bc57-c7f258bf3335</OperationLink><OperationLink>3ca2036a-db27-4514-af46-ac8bdbff6e1f</OperationLink></AzTask><AzTask Guid="401342bb-b03b-4a5c-ac69-5ec8fc4b8156" Name="DodDocumentsConfirmRole" Description="DisplayName=Акцептирование документов, подлежащих уничтожению;&lt;&lt;Акцептирование документов, подлежащих уничтожению&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>d47b27e9-ff5b-4fe7-99e5-0a0705294d6e</OperationLink><TaskLink>e368480b-ab8e-4ca9-bbdc-c568421ac13e</TaskLink><OperationLink>f274ace6-b14a-48a0-8af2-0b744cbc7c54</OperationLink></AzTask><AzOperation Guid="f08cfc33-d1b8-4c1d-8fd2-4a5f837728c2" Name="DodServiceDocumentsView" Description="Просмотр объектов хранения, не подлежащих хранению (ФКУ)"><OperationID>38</OperationID></AzOperation><AzTask Guid="4f9193f0-c120-4d92-b52c-673170cb0d27" Name="DodServiceDocumentsViewRole" Description="DisplayName=Просмотр объектов хранения, не подлежащих хранению (ФКУ);&lt;&lt;Просмотр объектов хранения, не подлежащих хранению (ФКУ)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>f08cfc33-d1b8-4c1d-8fd2-4a5f837728c2</OperationLink><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink></AzTask><AzOperation Guid="52155f9e-3093-4ea0-8e93-415407bc8a0e" Name="DodServiceDocumentsPostpone" Description="Продление срока хранения документов, подлежащих уничтожению (ФКУ)"><OperationID>39</OperationID></AzOperation><AzOperation Guid="95fdb81f-3f1f-4575-a79c-24fdfece282a" Name="DodServiceAssignmentAct" Description="Утверждение актов о выделении к уничтожению (ФКУ)"><OperationID>40</OperationID></AzOperation><AzOperation Guid="22180fa3-368b-4577-9562-e429cd98935c" Name="DodServiceDocumentsConfirm" Description="Акцептирование документов, подлежащих уничтожению (ФКУ)"><OperationID>41</OperationID></AzOperation><AzTask Guid="ace8c63f-5786-4165-bc21-7e226733566b" Name="DodServiceDocumentsPostponeRole" Description="DisplayName=Продление срока хранения документов, подлежащих уничтожению (ФКУ);&lt;&lt;Продление срока хранения документов, подлежащих уничтожению (ФКУ)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>52155f9e-3093-4ea0-8e93-415407bc8a0e</OperationLink><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink><OperationLink>f08cfc33-d1b8-4c1d-8fd2-4a5f837728c2</OperationLink></AzTask><AzTask Guid="4ccea459-393c-4e0a-aa79-c19eaa29abfa" Name="DodServiceDocumentsConfirmRole" Description="DisplayName=Акцептирование документов, подлежащих уничтожению (ФКУ);&lt;&lt;Акцептирование документов, подлежащих уничтожению (ФКУ)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>22180fa3-368b-4577-9562-e429cd98935c</OperationLink><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink><OperationLink>f08cfc33-d1b8-4c1d-8fd2-4a5f837728c2</OperationLink></AzTask><AzTask Guid="7d2f0de4-6a34-4d61-89e1-8740ee4f2b44" Name="DodServiceAssignmentActRole" Description="DisplayName=Утверждение актов о выделении к уничтожению (ФКУ);&lt;&lt;Утверждение актов о выделении к уничтожению (ФКУ)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>22180fa3-368b-4577-9562-e429cd98935c</OperationLink><OperationLink>52155f9e-3093-4ea0-8e93-415407bc8a0e</OperationLink><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink><OperationLink>95fdb81f-3f1f-4575-a79c-24fdfece282a</OperationLink><OperationLink>f08cfc33-d1b8-4c1d-8fd2-4a5f837728c2</OperationLink></AzTask><AzOperation Guid="ba220d67-c9ba-4949-82fd-2e6f3ef054ab" Name="LocalTransportSendReceiveOperation" Description="Отправка файлов через ИПС"><OperationID>99</OperationID></AzOperation><AzTask Guid="9496fb18-7091-4375-b71d-e252c3eef257" Name="LocalTransportRole" Description="DisplayName=Отправка файлов через ИПС;&lt;&lt;Отправка файлов через ИПС&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True"><OperationLink>ba220d67-c9ba-4949-82fd-2e6f3ef054ab</OperationLink><OperationLink>52f0faa5-c613-4daa-890f-104e6fbfa5f3</OperationLink></AzTask></AzApplication>
+</AzAdminManager>

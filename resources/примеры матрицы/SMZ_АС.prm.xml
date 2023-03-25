@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PrimaryRoleMatrix>
+  <Source name="Ролевая матрица Отчетность. Аналитические кубы" version="1.0.0" sourceFileName="Authorization\SMZ_АС.xml" sourceFileModifyDate="14.03.2022 14:10:24" />
+  <Subsystem name="SMZ" description="Подсистема &quot;ПП НПД&quot;" version="1.0.0.0">
+    <Source name="Ролевая матрица Отчетность. Аналитические кубы" version="1.0.0" sourceFileName="Authorization\SMZ_АС.xml" sourceFileModifyDate="14.03.2022 14:10:24" />
+    <Property name="DisplayName">Подсистема "ПП НПД"</Property>
+    <Property name="AppVersion">1.0.0.0</Property>
+    <Operations>
+      <Operation name="Оп-СМЗ_Кубы" description="Доступ к ветке кубов в ЕКП">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="4" sourceLinePosition="79" type="Error" sourceFileName="Authorization\SMZ_АС.xml">В композитном свойстве указано значение "Доступ к ветке кубов в ЕКП" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="Оп-СМЗ_КубыЦА" description="Доступ к кубам СМЗ на уровне ЦА">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="7" sourceLinePosition="81" type="Error" sourceFileName="Authorization\SMZ_АС.xml">В композитном свойстве указано значение "Доступ к кубам СМЗ на уровне ЦА" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="Оп-СМЗ_КубыНО" description="Доступ к кубам СМЗ на уровне НО">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="81" type="Error" sourceFileName="Authorization\SMZ_АС.xml">В композитном свойстве указано значение "Доступ к кубам СМЗ на уровне НО" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="Оп-СМЗ_Отчетность" description="Доступ к ветке отчетности ПП НПД в ЕКП">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="33" sourceLinePosition="85" type="Error" sourceFileName="Authorization\SMZ_АС.xml">В композитном свойстве указано значение "Доступ к ветке отчетности ПП НПД в ЕКП" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="Оп-СМЗ_ОтчетностьЦА" description="Доступ к отчетности ПП НПД на уровне ЦА">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="36" sourceLinePosition="87" type="Error" sourceFileName="Authorization\SMZ_АС.xml">В композитном свойстве указано значение "Доступ к отчетности ПП НПД на уровне ЦА" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+    </Operations>
+    <Roles>
+      <Role name="ФР-СМЗ_КубыЦА" displayName="ЦА. Аналитические кубы СМЗ" description="Доступ к аналитическим кубам на уровне ЦА (без ограничений по структурному контексту)">
+        <Property name="Description">Доступ к аналитическим кубам на уровне ЦА (без ограничений по структурному контексту)</Property>
+        <Property name="DisplayName">ЦА. Аналитические кубы СМЗ</Property>
+        <Property name="Context">0</Property>
+        <OperationRef name="Оп-СМЗ_КубыЦА" />
+        <OperationRef name="Оп-СМЗ_Кубы" />
+      </Role>
+      <Role name="СР-СМЗ_КубыНО" displayName="НО. Аналитические кубы СМЗ" description="Доступ к аналитическим кубам на уровне НО (с ограничениями в соответствии с указанными в структурном контексте кодами налоговых органов)">
+        <Property name="Description">Доступ к аналитическим кубам на уровне НО (с ограничениями в соответствии с указанными в структурном контексте кодами налоговых органов)</Property>
+        <Property name="DisplayName">НО. Аналитические кубы СМЗ</Property>
+        <Property name="Context">2</Property>
+        <OperationRef name="Оп-СМЗ_КубыНО" />
+        <OperationRef name="Оп-СМЗ_Кубы" />
+      </Role>
+      <Role name="ФР-СМЗ_ОтчетностьЦА" displayName="ЦА. Отчетность ПП НПД" description="Доступ к отчетности на уровне ЦА (без ограничений по структурному контексту)">
+        <Property name="Description">Доступ к отчетности на уровне ЦА (без ограничений по структурному контексту)</Property>
+        <Property name="DisplayName">ЦА. Отчетность ПП НПД</Property>
+        <Property name="Context">0</Property>
+        <OperationRef name="Оп-СМЗ_ОтчетностьЦА" />
+        <OperationRef name="Оп-СМЗ_Отчетность" />
+      </Role>
+    </Roles>
+    <Alerts>
+      <LoadAlerts>
+        <Alert sourceLineNumber="27" sourceLinePosition="4" type="Error" sourceFileName="Authorization\SMZ_АС.xml">Непредвиденный элемент AzScope.</Alert>
+      </LoadAlerts>
+    </Alerts>
+  </Subsystem>
+</PrimaryRoleMatrix>

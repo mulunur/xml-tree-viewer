@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PrimaryRoleMatrix>
+  <Source name="Ролевая матрица подсистемы общего назначения  Налоговый документооборот" version="1.0.0" sourceFileName="Authorization\TDF_ТС.xml" sourceFileModifyDate="05.10.2022 13:35:21" />
+  <Subsystem name="TDF" description="Подсистема общего назначения «Налоговый документооборот»" version="1.0.0.0">
+    <Source name="Ролевая матрица подсистемы общего назначения  Налоговый документооборот" version="1.0.0" sourceFileName="Authorization\TDF_ТС.xml" sourceFileModifyDate="05.10.2022 13:35:21" />
+    <Property name="DisplayName">Подсистема общего назначения «Налоговый документооборот»</Property>
+    <Property name="AppVersion">1.0.0.0</Property>
+    <Operations>
+      <Operation name="BoxingOperation" description="Операция комплектования тары">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="4" sourceLinePosition="83" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция комплектования тары" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DocumentRegistration" description="Регистрация документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="7" sourceLinePosition="88" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Регистрация документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ShipmentOperation" description="Операция передачи документов ФКУ">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="85" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция передачи документов ФКУ" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ViewDocumentOperation" description="Просмотр документа">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="13" sourceLinePosition="89" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Просмотр документа" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="PrintDocLabelsOperation" description="Печать этикеток документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="16" sourceLinePosition="91" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Печать этикеток документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="PaperDocumentsViewOperation" description="Мониторинг обработки документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="19" sourceLinePosition="95" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг обработки документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ViewContainerOperation" description="Операция просмотра контейнера">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="22" sourceLinePosition="90" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция просмотра контейнера" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="FoldersViewOperation" description="Мониторинг обработки тары">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="25" sourceLinePosition="88" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг обработки тары" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DocumentsResponsesViewOperation" description="Мониторинг отчётов обработки документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="28" sourceLinePosition="99" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг отчётов обработки документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="LegacyDocumentRegistrationOperation" description="Регистрация документа УДиЭА в TDF">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="31" sourceLinePosition="103" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Регистрация документа УДиЭА в TDF" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ImagesInputTaskView" description="Журнал обработки заданий на ввод с образов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="71" sourceLinePosition="87" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Журнал обработки заданий на ввод с образов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcExchangeMonitoring" description="Мониторинг взаимодействия с АИС3 Налог-ЦОД">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="74" sourceLinePosition="89" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг взаимодействия с АИС3 Налог-ЦОД" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="SelectiveScanRequestOperation" description="Запрос выборочного сканирования документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="89" sourceLinePosition="97" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Запрос выборочного сканирования документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ServiceIssueRequestOperation" description="Запрос ФКУ выдачи документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="92" sourceLinePosition="96" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Запрос ФКУ выдачи документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ScanningOperation" description="Операция сканирования документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="95" sourceLinePosition="85" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция сканирования документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="StorageObjectsOperation" description="Операция учёта объектов хранения">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="102" sourceLinePosition="91" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция учёта объектов хранения" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="StorageObjectsMrpOperation" description="Дела, переданные из МРП">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="109" sourceLinePosition="94" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Дела, переданные из МРП" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ConformedContentViewOperation" description="Операция просмотра электронных представлений документа">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="116" sourceLinePosition="97" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция просмотра электронных представлений документа" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="MprOperation" description="Операция для запуска форм почтовых отправлений">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="123" sourceLinePosition="80" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Операция для запуска форм почтовых отправлений" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimCreateOperation" description="Создание заявок на смену владельцев документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="129" sourceLinePosition="93" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Создание заявок на смену владельцев документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimEditOperation" description="Редактирование списков документов заявок на смену владельцев">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="132" sourceLinePosition="91" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Редактирование списков документов заявок на смену владельцев" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimApproveOperation" description="Утверждение заявок на смену владельцев документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="135" sourceLinePosition="94" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Утверждение заявок на смену владельцев документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimConfirmOperation" description="Согласование заявок на смену владельцев документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="138" sourceLinePosition="94" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Согласование заявок на смену владельцев документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimViewOperation" description="Просмотр заявок на смену владельцев документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="166" sourceLinePosition="91" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Просмотр заявок на смену владельцев документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ChownClaimCuratorOperation" description="Куратор заявок на смену владельцев документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="173" sourceLinePosition="94" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Куратор заявок на смену владельцев документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="A01TrdOperation" description="Передача исходящих документов на БН на отправку">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="176" sourceLinePosition="83" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Передача исходящих документов на БН на отправку" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodDocumentsView" description="Просмотр объектов хранения, не подлежащих хранению">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="183" sourceLinePosition="84" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Просмотр объектов хранения, не подлежащих хранению" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodDocumentsPostpone" description="Продление срока хранения документов, подлежащих уничтожению">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="186" sourceLinePosition="88" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Продление срока хранения документов, подлежащих уничтожению" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodDocumentsConfirm" description="Акцептирование документов, подлежащих уничтожению">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="189" sourceLinePosition="87" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Акцептирование документов, подлежащих уничтожению" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodAssignmentAct" description="Утверждение актов о выделении к уничтожению">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="192" sourceLinePosition="84" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Утверждение актов о выделении к уничтожению" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="StorageObjectsPeriodOperation" description="Редактирование срока хранения объектов хранения">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="210" sourceLinePosition="97" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Редактирование срока хранения объектов хранения" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="A01MprTaskOperation" description="Мониторинг взаимодействия по массовой печати и рассылке">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="87" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг взаимодействия по массовой печати и рассылке" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ReviseOperation" description="Сверка данных о документах">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="629" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Сверка данных о документах" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="ReviseMonitoringOperation" description="Мониторинг сверки данных о документах">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="1157" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Мониторинг сверки данных о документах" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="A01MprTaskAllOperation" description="Централизованный мониторинг взаимодействия по массовой печати и рассылке">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="1792" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Централизованный мониторинг взаимодействия по массовой печати и рассылке" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodServiceDocumentsView" description="Просмотр объектов хранения, не подлежащих хранению (ФКУ)">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="2933" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Просмотр объектов хранения, не подлежащих хранению (ФКУ)" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodServiceDocumentsPostpone" description="Продление срока хранения документов, подлежащих уничтожению (ФКУ)">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="3570" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Продление срока хранения документов, подлежащих уничтожению (ФКУ)" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodServiceAssignmentAct" description="Утверждение актов о выделении к уничтожению (ФКУ)">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="3781" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Утверждение актов о выделении к уничтожению (ФКУ)" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DodServiceDocumentsConfirm" description="Акцептирование документов, подлежащих уничтожению (ФКУ)">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="3979" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Акцептирование документов, подлежащих уничтожению (ФКУ)" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="LocalTransportSendReceiveOperation" description="Отправка файлов через ИПС">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="216" sourceLinePosition="5828" type="Error" sourceFileName="Authorization\TDF_ТС.xml">В композитном свойстве указано значение "Отправка файлов через ИПС" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+    </Operations>
+    <Roles>
+      <Role name="DocumentBoxingOperator" displayName="Оператор комплектования документов в тару" description="Оператор комплектования документов в тару">
+        <Property name="Description">Оператор комплектования документов в тару</Property>
+        <Property name="DisplayName">Оператор комплектования документов в тару</Property>
+        <OperationRef name="BoxingOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DocumentRegistrationRole" displayName="Роль регистрации документов" description="Роль регистрации документов">
+        <Property name="Description">Роль регистрации документов</Property>
+        <Property name="DisplayName">Роль регистрации документов</Property>
+        <OperationRef name="DocumentRegistration" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DocumentShipmentOperator" displayName="Оператор передачи документов ФКУ" description="Оператор передачи документов ФКУ">
+        <Property name="Description">Оператор передачи документов ФКУ</Property>
+        <Property name="DisplayName">Оператор передачи документов ФКУ</Property>
+        <OperationRef name="ShipmentOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ViewDocumentRole" displayName="Роль просмотра документа" description="Роль просмотра документа">
+        <Property name="Description">Роль просмотра документа</Property>
+        <Property name="DisplayName">Роль просмотра документа</Property>
+        <OperationRef name="LegacyDocumentRegistrationOperation" />
+        <OperationRef name="ViewContainerOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="PrintDocLabelsOperator" displayName="Печать этикеток документов" description="Печать этикеток документов">
+        <Property name="Description">Печать этикеток документов</Property>
+        <Property name="DisplayName">Печать этикеток документов</Property>
+        <OperationRef name="PrintDocLabelsOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="PaperDocumentsViewOperator" displayName="Мониторинг обработки документов" description="Мониторинг обработки документов">
+        <Property name="Description">Мониторинг обработки документов</Property>
+        <Property name="DisplayName">Мониторинг обработки документов</Property>
+        <OperationRef name="PaperDocumentsViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="FoldersViewOperator" displayName="Мониторинг обработки тары" description="Мониторинг обработки тары">
+        <Property name="Description">Мониторинг обработки тары</Property>
+        <Property name="DisplayName">Мониторинг обработки тары</Property>
+        <OperationRef name="FoldersViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DocumentsResponsesViewOperator" displayName="Мониторинг отчётов обработки документов" description="Мониторинг отчётов обработки документов">
+        <Property name="Description">Мониторинг отчётов обработки документов</Property>
+        <Property name="DisplayName">Мониторинг отчётов обработки документов</Property>
+        <OperationRef name="DocumentsResponsesViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ImagesInputTaskViewRole" displayName="Мониторинг обработки заданий на ввод с образов документов" description="Мониторинг обработки заданий на ввод с образов документов">
+        <Property name="Description">Мониторинг обработки заданий на ввод с образов документов</Property>
+        <Property name="DisplayName">Мониторинг обработки заданий на ввод с образов документов</Property>
+        <OperationRef name="ImagesInputTaskView" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DpcExchangeMonitoringRole" displayName="Мониторинг взаимодействия с АИС3 Налог-ЦОД" description="Мониторинг взаимодействия с АИС3 Налог-ЦОД">
+        <Property name="Description">Мониторинг взаимодействия с АИС3 Налог-ЦОД</Property>
+        <Property name="DisplayName">Мониторинг взаимодействия с АИС3 Налог-ЦОД</Property>
+        <OperationRef name="DpcExchangeMonitoring" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="SelectiveScanRequestRole" displayName="Запрос выборочного сканирования документов" description="Запрос выборочного сканирования документов">
+        <Property name="Description">Запрос выборочного сканирования документов</Property>
+        <Property name="DisplayName">Запрос выборочного сканирования документов</Property>
+        <OperationRef name="SelectiveScanRequestOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ServiceIssueRequestRole" displayName="Запрос ФКУ выдачи документов" description="Запрос ФКУ выдачи документов">
+        <Property name="Description">Запрос ФКУ выдачи документов</Property>
+        <Property name="DisplayName">Запрос ФКУ выдачи документов</Property>
+        <OperationRef name="ServiceIssueRequestOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ScanningRole" displayName="Сканирование документов" description="Сканирование документов">
+        <Property name="Description">Сканирование документов</Property>
+        <Property name="DisplayName">Сканирование документов</Property>
+        <OperationRef name="ScanningOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="StorageObjectsRole" displayName="Объекты хранения" description="Объекты хранения">
+        <Property name="Description">Объекты хранения</Property>
+        <Property name="DisplayName">Объекты хранения</Property>
+        <OperationRef name="StorageObjectsOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="StorageObjectsMrpRole" displayName="Дела, переданные из МРП" description="Дела, переданные из МРП">
+        <Property name="Description">Дела, переданные из МРП</Property>
+        <Property name="DisplayName">Дела, переданные из МРП</Property>
+        <OperationRef name="StorageObjectsMrpOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ConformedContentRole" displayName="Просмотр электронных представлений документа" description="Просмотр электронных представлений документа">
+        <Property name="Description">Просмотр электронных представлений документа</Property>
+        <Property name="DisplayName">Просмотр электронных представлений документа</Property>
+        <OperationRef name="ConformedContentViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="Mpr" displayName="Массовая печать и рассылка" description="Управление процессом печати почтовых отправлений">
+        <Property name="Description">Управление процессом печати почтовых отправлений</Property>
+        <Property name="DisplayName">Массовая печать и рассылка</Property>
+        <OperationRef name="MprOperation" />
+      </Role>
+      <Role name="ChownClaimCreateRole" displayName="Создание заявок на смену владельцев документов" description="Создание заявок на смену владельцев документов">
+        <Property name="Description">Создание заявок на смену владельцев документов</Property>
+        <Property name="DisplayName">Создание заявок на смену владельцев документов</Property>
+        <OperationRef name="ChownClaimEditOperation" />
+        <OperationRef name="ChownClaimCreateOperation" />
+        <OperationRef name="ChownClaimViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ChownClaimEditRole" displayName="Редактирование списков документов заявок на смену владельцев" description="Редактирование списков документов заявок на смену владельцев">
+        <Property name="Description">Редактирование списков документов заявок на смену владельцев</Property>
+        <Property name="DisplayName">Редактирование списков документов заявок на смену владельцев</Property>
+        <OperationRef name="ChownClaimEditOperation" />
+        <OperationRef name="ChownClaimViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ChownClaimApproveRole" displayName="Утверждение заявок на смену владельцев документов" description="Утверждение заявок на смену владельцев документов">
+        <Property name="Description">Утверждение заявок на смену владельцев документов</Property>
+        <Property name="DisplayName">Утверждение заявок на смену владельцев документов</Property>
+        <OperationRef name="ChownClaimApproveOperation" />
+        <OperationRef name="ChownClaimEditOperation" />
+        <OperationRef name="ChownClaimCreateOperation" />
+        <OperationRef name="ChownClaimViewOperation" />
+        <OperationRef name="ChownClaimCuratorOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ChownClaimConfirmRole" displayName="Согласование заявок на смену владельцев документов" description="Согласование заявок на смену владельцев документов">
+        <Property name="Description">Согласование заявок на смену владельцев документов</Property>
+        <Property name="DisplayName">Согласование заявок на смену владельцев документов</Property>
+        <OperationRef name="ChownClaimConfirmOperation" />
+        <OperationRef name="ChownClaimViewOperation" />
+        <OperationRef name="ChownClaimCuratorOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="ChownClaimViewRole" displayName="Просмотр заявок на смену владельцев документов" description="Просмотр заявок на смену владельцев документов">
+        <Property name="Description">Просмотр заявок на смену владельцев документов</Property>
+        <Property name="DisplayName">Просмотр заявок на смену владельцев документов</Property>
+        <OperationRef name="ChownClaimViewOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="A01TrdRole" displayName="Передача исходящих документов на БН на отправку" description="Передача исходящих документов на БН на отправку">
+        <Property name="Description">Передача исходящих документов на БН на отправку</Property>
+        <Property name="DisplayName">Передача исходящих документов на БН на отправку</Property>
+        <OperationRef name="A01TrdOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DodDocumentsViewRole" displayName="Просмотр объектов хранения, не подлежащих хранению" description="Просмотр объектов хранения, не подлежащих хранению">
+        <Property name="Description">Просмотр объектов хранения, не подлежащих хранению</Property>
+        <Property name="DisplayName">Просмотр объектов хранения, не подлежащих хранению</Property>
+        <OperationRef name="DodDocumentsView" />
+        <RoleRef name="ViewDocumentRole" />
+      </Role>
+      <Role name="DodDocumentsPostponeRole" displayName="Продление срока хранения документов, подлежащих уничтожению" description="Продление срока хранения документов, подлежащих уничтожению">
+        <Property name="Description">Продление срока хранения документов, подлежащих уничтожению</Property>
+        <Property name="DisplayName">Продление срока хранения документов, подлежащих уничтожению</Property>
+        <OperationRef name="DodDocumentsPostpone" />
+        <OperationRef name="DodDocumentsView" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DodAssignmentActRole" displayName="Утверждение актов о выделении к уничтожению" description="Утверждение актов о выделении к уничтожению">
+        <Property name="Description">Утверждение актов о выделении к уничтожению</Property>
+        <Property name="DisplayName">Утверждение актов о выделении к уничтожению</Property>
+        <OperationRef name="DodAssignmentAct" />
+        <OperationRef name="DodDocumentsPostpone" />
+        <OperationRef name="DodDocumentsConfirm" />
+        <OperationRef name="DodDocumentsView" />
+        <RoleRef name="ViewDocumentRole" />
+      </Role>
+      <Role name="StorageObjectsPeriodRole" displayName="Редактирование срока хранения объектов хранения" description="Редактирование срока хранения объектов хранения">
+        <Property name="Description">Редактирование срока хранения объектов хранения</Property>
+        <Property name="DisplayName">Редактирование срока хранения объектов хранения</Property>
+        <OperationRef name="StorageObjectsPeriodOperation" />
+      </Role>
+      <Role name="A01MprTaskRole" displayName="Мониторинг взаимодействия по массовой печати и рассылке" description="Мониторинг взаимодействия по массовой печати и рассылке">
+        <Property name="Description">Мониторинг взаимодействия по массовой печати и рассылке</Property>
+        <Property name="DisplayName">Мониторинг взаимодействия по массовой печати и рассылке</Property>
+        <OperationRef name="A01MprTaskOperation" />
+      </Role>
+      <Role name="ReviseRole" displayName="Сверка данных о документах" description="Сверка данных о документах">
+        <Property name="Description">Сверка данных о документах</Property>
+        <Property name="DisplayName">Сверка данных о документах</Property>
+        <OperationRef name="ViewDocumentOperation" />
+        <OperationRef name="ReviseOperation" />
+      </Role>
+      <Role name="ReviseMonitoringRole" displayName="Мониторинг сверки данных о документах" description="Мониторинг сверки данных о документах">
+        <Property name="Description">Мониторинг сверки данных о документах</Property>
+        <Property name="DisplayName">Мониторинг сверки данных о документах</Property>
+        <OperationRef name="ViewDocumentOperation" />
+        <OperationRef name="ReviseMonitoringOperation" />
+        <OperationRef name="ReviseOperation" />
+      </Role>
+      <Role name="A01MprTaskAllRole" displayName="Централизованный мониторинг взаимодействия по массовой печати и рассылке" description="Централизованный мониторинг взаимодействия по массовой печати и рассылке">
+        <Property name="Description">Централизованный мониторинг взаимодействия по массовой печати и рассылке</Property>
+        <Property name="DisplayName">Централизованный мониторинг взаимодействия по массовой печати и рассылке</Property>
+        <OperationRef name="A01MprTaskAllOperation" />
+        <OperationRef name="A01MprTaskOperation" />
+      </Role>
+      <Role name="DodDocumentsConfirmRole" displayName="Акцептирование документов, подлежащих уничтожению" description="Акцептирование документов, подлежащих уничтожению">
+        <Property name="Description">Акцептирование документов, подлежащих уничтожению</Property>
+        <Property name="DisplayName">Акцептирование документов, подлежащих уничтожению</Property>
+        <OperationRef name="DodDocumentsConfirm" />
+        <OperationRef name="DodDocumentsView" />
+        <RoleRef name="ViewDocumentRole" />
+      </Role>
+      <Role name="DodServiceDocumentsViewRole" displayName="Просмотр объектов хранения, не подлежащих хранению (ФКУ)" description="Просмотр объектов хранения, не подлежащих хранению (ФКУ)">
+        <Property name="Description">Просмотр объектов хранения, не подлежащих хранению (ФКУ)</Property>
+        <Property name="DisplayName">Просмотр объектов хранения, не подлежащих хранению (ФКУ)</Property>
+        <OperationRef name="DodServiceDocumentsView" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+      <Role name="DodServiceDocumentsPostponeRole" displayName="Продление срока хранения документов, подлежащих уничтожению (ФКУ)" description="Продление срока хранения документов, подлежащих уничтожению (ФКУ)">
+        <Property name="Description">Продление срока хранения документов, подлежащих уничтожению (ФКУ)</Property>
+        <Property name="DisplayName">Продление срока хранения документов, подлежащих уничтожению (ФКУ)</Property>
+        <OperationRef name="DodServiceDocumentsPostpone" />
+        <OperationRef name="ViewDocumentOperation" />
+        <OperationRef name="DodServiceDocumentsView" />
+      </Role>
+      <Role name="DodServiceDocumentsConfirmRole" displayName="Акцептирование документов, подлежащих уничтожению (ФКУ)" description="Акцептирование документов, подлежащих уничтожению (ФКУ)">
+        <Property name="Description">Акцептирование документов, подлежащих уничтожению (ФКУ)</Property>
+        <Property name="DisplayName">Акцептирование документов, подлежащих уничтожению (ФКУ)</Property>
+        <OperationRef name="DodServiceDocumentsConfirm" />
+        <OperationRef name="ViewDocumentOperation" />
+        <OperationRef name="DodServiceDocumentsView" />
+      </Role>
+      <Role name="DodServiceAssignmentActRole" displayName="Утверждение актов о выделении к уничтожению (ФКУ)" description="Утверждение актов о выделении к уничтожению (ФКУ)">
+        <Property name="Description">Утверждение актов о выделении к уничтожению (ФКУ)</Property>
+        <Property name="DisplayName">Утверждение актов о выделении к уничтожению (ФКУ)</Property>
+        <OperationRef name="DodServiceDocumentsConfirm" />
+        <OperationRef name="DodServiceDocumentsPostpone" />
+        <OperationRef name="ViewDocumentOperation" />
+        <OperationRef name="DodServiceAssignmentAct" />
+        <OperationRef name="DodServiceDocumentsView" />
+      </Role>
+      <Role name="LocalTransportRole" displayName="Отправка файлов через ИПС" description="Отправка файлов через ИПС">
+        <Property name="Description">Отправка файлов через ИПС</Property>
+        <Property name="DisplayName">Отправка файлов через ИПС</Property>
+        <OperationRef name="LocalTransportSendReceiveOperation" />
+        <OperationRef name="ViewDocumentOperation" />
+      </Role>
+    </Roles>
+  </Subsystem>
+</PrimaryRoleMatrix>

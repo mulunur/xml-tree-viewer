@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PrimaryRoleMatrix>
+  <Source name="Ролевая матрица подсистемы Массовый ввод, массовая печать и архивное хранение" version="1.0.0" sourceFileName="Authorization\DPC_ТС.xml" sourceFileModifyDate="03.10.2022 13:30:33" />
+  <Subsystem name="DPC" description="Массовый ввод, массовая печать и архивное хранение" version="1.0.0.0">
+    <Source name="Ролевая матрица подсистемы Массовый ввод, массовая печать и архивное хранение" version="1.0.0" sourceFileName="Authorization\DPC_ТС.xml" sourceFileModifyDate="03.10.2022 13:30:33" />
+    <Property name="DisplayName">Массовый ввод, массовая печать и архивное хранение</Property>
+    <Property name="AppVersion">1.0.0.0</Property>
+    <Operations>
+      <Operation name="DpcSupportOperation" description="Операция поддержки">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="7" sourceLinePosition="87" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция поддержки" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsNsiMaintenanceOperation" description="Операция редактирования справочников">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="99" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция редактирования справочников" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsEditRoomOperation" description="Операция редактирования сведений о помещениях">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="282" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция редактирования сведений о помещениях" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsEditReportOperation" description="Операция редактирования сведений о количестве документов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="476" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция редактирования сведений о количестве документов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsApproveReportOperation" description="Операция утверждения отчетов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="684" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция утверждения отчетов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsReportMonitoringOperation" description="Операция мониторинга формирования отчетов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="867" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция мониторинга формирования отчетов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsViewReportOperation" description="Операция просмотра отчетов">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="2884" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция просмотра отчетов" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsViewFkuReportOperation" description="Операция просмотра отчетов ФКУ">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="3471" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция просмотра отчетов ФКУ" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsApproveFkuReportOperation" description="Операция утверждения отчетов ФКУ">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="3656" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция утверждения отчетов ФКУ" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+      <Operation name="DpcRoomsViewTnoReportOperation" description="Операция просмотра отчетов ТНО">
+        <Alerts>
+          <LoadAlerts>
+            <Alert sourceLineNumber="10" sourceLinePosition="4630" type="Error" sourceFileName="Authorization\DPC_ТС.xml">В композитном свойстве указано значение "Операция просмотра отчетов ТНО" без наименования.</Alert>
+          </LoadAlerts>
+        </Alerts>
+      </Operation>
+    </Operations>
+    <Roles>
+      <Role name="DpcSupport" displayName="Поддержка" description="Поддержка">
+        <Property name="Description">Поддержка</Property>
+        <Property name="DisplayName">Поддержка</Property>
+        <OperationRef name="DpcSupportOperation" />
+      </Role>
+      <Role name="DpcRoomsNsiMaintenance" displayName="Редактирование справочников" description="Редактирование справочников">
+        <Property name="Description">Редактирование справочников</Property>
+        <Property name="DisplayName">Редактирование справочников</Property>
+        <OperationRef name="DpcRoomsNsiMaintenanceOperation" />
+        <OperationRef name="DpcRoomsEditRoomOperation" />
+      </Role>
+      <Role name="DpcRoomsEditRoom" displayName="Редактирование сведений о помещениях" description="Редактирование сведений о помещениях">
+        <Property name="Description">Редактирование сведений о помещениях</Property>
+        <Property name="DisplayName">Редактирование сведений о помещениях</Property>
+        <OperationRef name="DpcRoomsEditRoomOperation" />
+      </Role>
+      <Role name="DpcRoomsEditReport" displayName="Формирование отчетов" description="Формирование отчетов">
+        <Property name="Description">Формирование отчетов</Property>
+        <Property name="DisplayName">Формирование отчетов</Property>
+        <OperationRef name="DpcRoomsEditReportOperation" />
+        <OperationRef name="DpcRoomsViewReportOperation" />
+        <OperationRef name="DpcRoomsViewTnoReportOperation" />
+      </Role>
+      <Role name="DpcRoomsApproveReport" displayName="Утверждение отчетов" description="Утверждение отчетов">
+        <Property name="Description">Утверждение отчетов</Property>
+        <Property name="DisplayName">Утверждение отчетов</Property>
+        <OperationRef name="DpcRoomsApproveReportOperation" />
+        <OperationRef name="DpcRoomsViewReportOperation" />
+        <OperationRef name="DpcRoomsViewTnoReportOperation" />
+      </Role>
+      <Role name="DpcRoomsReportMonitoring" displayName="Мониторинг формирования отчетов" description="Мониторинг формирования отчетов">
+        <Property name="Description">Мониторинг формирования отчетов</Property>
+        <Property name="DisplayName">Мониторинг формирования отчетов</Property>
+        <OperationRef name="DpcRoomsReportMonitoringOperation" />
+      </Role>
+      <Role name="DpcRoomsViewReport" displayName="Просмотр отчетов" description="Просмотр отчетов">
+        <Property name="Description">Просмотр отчетов</Property>
+        <Property name="DisplayName">Просмотр отчетов</Property>
+        <OperationRef name="DpcRoomsViewReportOperation" />
+        <OperationRef name="DpcRoomsViewTnoReportOperation" />
+        <OperationRef name="DpcRoomsReportMonitoringOperation" />
+      </Role>
+      <Role name="DpcRoomsViewFkuReport" displayName="Просмотр отчетов (ФКУ)" description="Просмотр отчетов (ФКУ)">
+        <Property name="Description">Просмотр отчетов (ФКУ)</Property>
+        <Property name="DisplayName">Просмотр отчетов (ФКУ)</Property>
+        <OperationRef name="DpcRoomsViewFkuReportOperation" />
+        <OperationRef name="DpcRoomsViewReportOperation" />
+      </Role>
+      <Role name="DpcRoomsApproveFkuReport" displayName="Утверждение отчетов (ФКУ)" description="Утверждение отчетов (ФКУ)">
+        <Property name="Description">Утверждение отчетов (ФКУ)</Property>
+        <Property name="DisplayName">Утверждение отчетов (ФКУ)</Property>
+        <OperationRef name="DpcRoomsApproveFkuReportOperation" />
+        <OperationRef name="DpcRoomsViewReportOperation" />
+        <OperationRef name="DpcRoomsViewFkuReportOperation" />
+      </Role>
+    </Roles>
+  </Subsystem>
+</PrimaryRoleMatrix>

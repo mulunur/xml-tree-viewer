@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PrimaryRoleMatrix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/_Work/Tasks/(2022-09-05_17-38-01).%D0%A6%D0%A1%D0%A3%D0%94/PrimaryRoleMatrix.xsd">
+	<!-- Своя реализация/формат версии. Пока строка. Позже надо будет доделать. Semantic Versioning 2.0.0 (semver.org) -->
+	<Source name="source unique name" version="1.0.0" sourceFileName="file_name.xml" sourceFileModifyDate=""/>
+	<!--приложение источник первичной ролевой матрицы-->
+	<Subsystem name="Subsystem1" description="Подсистема 1" version="1.2.3">
+		<!-- Своя реализация/формат версии. Пока строка. Позже надо будет доделать. Semantic Versioning 2.0.0 (semver.org) -->
+		<Source name="source unique name" version="1.0.0" sourceFileName="file_name.xml" sourceFileModifyDate=""/>
+		<Property name="version">version1</Property>
+		<Attributes>
+			<Kind code="Vid_Dej" displayName="Вид деятельности" description="">
+				<Attribute code="Vid_Dej_Cam_Check" displayName="Камеральная проверка" description="Камеральная проверка"/>
+				<Attribute code="Vid_Dej_Viyezd_Check" displayName="Выездная проверка" description="Выездная проверка"/>
+				<Alerts>
+					<LoadAlerts>
+						<Alert type="Info|Warning|Error" sourceFileName="" sourceLineNumber="3" sourceLinePosition="121"><![CDATA[Error <Text/>.]]></Alert>
+					</LoadAlerts>
+				</Alerts>
+			</Kind>
+			<Kind code="Vid2" displayName="Вид 2">
+				<Attribute code="Cod1" displayName="Значение 1"/>
+				<Attribute code="Cod2" displayName="Значение 2"/>
+				<Alerts>
+					<MergeAlerts>
+						<Alert type="Error" sourceFileName="" sourceLineNumber="3" sourceLinePosition="121"><![CDATA[Unkonwn element Attribute1.]]></Alert>
+						<Alert type="Error" sourceFileName="" sourceLineNumber="3" sourceLinePosition="121"><![CDATA[Unkonwn element Attribute1.]]></Alert>
+						<Alert type="Error" sourceFileName="" sourceLineNumber="3" sourceLinePosition="121"><![CDATA[Unkonwn element Attribute1.]]></Alert>
+					</MergeAlerts>
+				</Alerts>
+			</Kind>
+		</Attributes>
+		<Contexts>
+			<Context code="Ctx1" displayName="Контекст 1" description="">
+				<AttributeRef kind="Vid_Dej" code="Vid_Dej_Cam_Check"/>
+				<AttributeRef kind="Vid2" code="Cod2"/>
+			</Context>
+			<Context code="Ctx2" displayName="Контекст 2"/>
+		</Contexts>
+		<Operations>
+			<Operation name="Op1" description="Операция 1">
+				<AttributeRef kind="Vid_Dej" code="Vid_Dej_Cam_Check"/>
+				<AttributeRef kind="Vid2" code="Cod2"/>
+				<ContextRef code="Ctx1"/>
+				<ContextRef code="Ctx2"/>
+				<Alerts>
+					<ValidateAlerts>
+						<Alert type="Info|Warning|Error" sourceFileName="" sourceLineNumber="3" sourceLinePosition="121"><![CDATA[Error <Text/>.]]></Alert>
+					</ValidateAlerts>
+				</Alerts>
+			</Operation>
+			<Operation name="Op2"/>
+		</Operations>
+		<Roles>
+			<Role name="Role1" displayName="Роль 1" description="Роль 1">
+				<AttributeRef kind="Vid_Dej" code="Vid_Dej_Cam_Check"/>
+				<AttributeRef kind="Vid2" code="Cod2"/>
+				<ContextRef code="Ctx1"/>
+				<ContextRef code="Ctx2"/>
+				<OperationRef name="Op1"/>
+				<OperationRef name="Op2"/>
+				<RoleRef name="Role2"/>
+				<RoleRef name="Role3"/>
+			</Role>
+			<Role name="Role2" displayName="Роль 2">
+				<Property name="version">version1</Property>
+			</Role>
+		</Roles>
+		<Actions>
+			<Process name="Proc1" displayName="Процесс 1" description="Процесс 1">
+				<AttributeRef kind="Vid_Dej" code="Vid_Dej_Cam_Check"/>
+				<AttributeRef kind="Vid2" code="Cod2"/>
+				<ContextRef code="Ctx1"/>
+				<ContextRef code="Ctx2"/>
+				<Action name="Act1" displayName="Действие 1" description="Действие 1">
+					<AttributeRef kind="Vid_Dej" code="Vid_Dej_Cam_Check"/>
+					<AttributeRef kind="Vid2" code="Cod2"/>
+					<ContextRef code="Ctx1"/>
+					<ContextRef code="Ctx2"/>
+				</Action>
+				<Action name="Act2" displayName="Действие 2"/>
+			</Process>
+			<Process name="Proc2" displayName="Процесс 2">
+				<Action name="Act3" displayName="Действие 3"/>
+			</Process>
+		</Actions>
+	</Subsystem>
+</PrimaryRoleMatrix>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TestPermissions>
+  <Source name="Ролевая матрица Отчетность. Аналитические кубы" version="1.0.0" sourceFileName="Authorization\SMZ_АС.xml" sourceFileModifyDate="14.03.2022 14:10:24" />
+  <Tasks>
+    <Task name="ФР-СМЗ_КубыЦА">
+      <RoleRef name="ФР-СМЗ_КубыЦА" />
+    </Task>
+    <Task name="СР-СМЗ_КубыНО">
+      <RoleRef name="СР-СМЗ_КубыНО" />
+    </Task>
+    <Task name="ФР-СМЗ_ОтчетностьЦА">
+      <RoleRef name="ФР-СМЗ_ОтчетностьЦА" />
+    </Task>
+  </Tasks>
+  <Users>
+    <User s="S-1-5-21-288006714-2159811191-2066094697-30617" />
+    <User s="S-1-5-21-288006714-2159811191-2066094697-30201" />
+    <User s="S-1-5-21-288006714-2159811191-2066094697-30618" />
+    <User s="S-1-5-21-288006714-2159811191-2066094697-31822" />
+  </Users>
+  <Groups>
+    <Group name="Developers">
+      <TaskRef name="ФР-СМЗ_ОтчетностьЦА" />
+      <UserRef s="S-1-5-21-288006714-2159811191-2066094697-30617" />
+      <UserRef s="S-1-5-21-288006714-2159811191-2066094697-30201" />
+      <UserRef s="S-1-5-21-288006714-2159811191-2066094697-30618" />
+      <UserRef s="S-1-5-21-288006714-2159811191-2066094697-31822" />
+    </Group>
+  </Groups>
+</TestPermissions>

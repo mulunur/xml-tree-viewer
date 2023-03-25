@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by MESMERiZE (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="TestPermissions">
+		<xs:annotation>
+			<xs:documentation>Тестовое дополнение певичной ролевой матрицы</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Source"/>
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Users" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Пользователи</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:choice maxOccurs="unbounded">
+									<xs:element ref="CurrentUser" minOccurs="0"/>
+									<xs:element ref="User" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:choice>
+							</xs:sequence>
+						</xs:complexType>
+						<xs:unique name="UserUniqueC">
+							<xs:selector xpath="User"/>
+							<xs:field xpath="@c"/>
+						</xs:unique>
+						<xs:unique name="UserUniqueK">
+							<xs:selector xpath="User"/>
+							<xs:field xpath="@k"/>
+						</xs:unique>
+						<xs:unique name="UserUniqueS">
+							<xs:selector xpath="User"/>
+							<xs:field xpath="@s"/>
+						</xs:unique>
+						<xs:unique name="UserUniqueT">
+							<xs:selector xpath="User"/>
+							<xs:field xpath="@t"/>
+						</xs:unique>
+					</xs:element>
+					<xs:element name="Groups" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Группы</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Group" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Tasks" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Задачи</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Task" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="CodeType">
+		<xs:annotation>
+			<xs:documentation>Код</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="127"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameType">
+		<xs:annotation>
+			<xs:documentation>Наименование</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SemVerType">
+		<xs:annotation>
+			<xs:documentation>SemVer (Semantic Versioning 2.0.0)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-((0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(\+([0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*))?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CsudUserIdType">
+		<xs:annotation>
+			<xs:documentation>Csud User Id</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="C-[0-9]{12}-[0-9]{1,10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KeycloakUserIdType">
+		<xs:annotation>
+			<xs:documentation>keycloak User Id</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="K-idmz-esk-[0-9]{1,10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonnelNumberType">
+		<xs:annotation>
+			<xs:documentation>Табельный номер</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="T-[0-9]{4}-[0-9]{1,10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SidAdType">
+		<xs:annotation>
+			<xs:documentation>SID AD</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="S-1-5-((32-[0-9]*)|(21-[0-9]*-[0-9]*-[0-9]*-[0-9]*))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Group">
+		<xs:annotation>
+			<xs:documentation>Группа</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="TaskRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="UserRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="CurrentUserRef" minOccurs="0"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Source">
+		<xs:annotation>
+			<xs:documentation>Источник. Описывает, откуда был загружен родительский элемент.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="version" type="SemVerType" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="sourceFileName" use="required">
+				<xs:annotation>
+					<xs:documentation>Имя файла</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="sourceFileModifyDate" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата последней модификации файла</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Task">
+		<xs:annotation>
+			<xs:documentation>Задача</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ActionRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="RoleRef" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Property">
+		<xs:annotation>
+			<xs:documentation>Расширенное свойство. Значение указывается в виде текста внутри элемента.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="name" use="required">
+						<xs:annotation>
+							<xs:documentation>Наименование</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alert">
+		<xs:annotation>
+			<xs:documentation>Уведомление/сообщение.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" use="required">
+						<xs:annotation>
+							<xs:documentation>Тип уведомления: сообщение, предупреждение, ошибка.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceFileName" use="required">
+						<xs:annotation>
+							<xs:documentation>Имя исходного файла, откуда был загружен элемент.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceLineNumber" use="required">
+						<xs:annotation>
+							<xs:documentation>Номер строки в исходном файле.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceLinePosition" use="required">
+						<xs:annotation>
+							<xs:documentation>Позиция в строке в исходном файле.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alerts">
+		<xs:annotation>
+			<xs:documentation>Уведомления.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="LoadAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления загрузки.
+Примечание: накопительные -- при загрузке уведомления такого рода, имеющиеся в исходном файле, не очищаются.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="MergeAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления слияния.
+Примечание: накопительные -- перед слиянием уведомления такого рода, имеющиеся в исходном файле, не очищаются.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ValidateAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления, сформированные во время (последней) проверки.
+Примечание: НЕ накопительные -- перед запуском очередной проверки уведомления такого рода очищаются у всех элементов матрицы.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ActionRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на действие</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContextRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на контекст</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="code" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на операцию</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoleRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на роль</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TaskRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на задачу</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="User">
+		<xs:annotation>
+			<xs:documentation>Пользователь</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="c" type="CsudUserIdType">
+				<xs:annotation>
+					<xs:documentation>[ключевой атрибут] Csud User Id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="s" type="SidAdType">
+				<xs:annotation>
+					<xs:documentation>[ключевой атрибут] SID AD</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="t" type="PersonnelNumberType">
+				<xs:annotation>
+					<xs:documentation>[ключевой атрибут] Табельный номер</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="k" type="KeycloakUserIdType">
+				<xs:annotation>
+					<xs:documentation>[ключевой атрибут] keycloak User Id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="userPrincipalName">
+				<xs:annotation>
+					<xs:documentation>имя пользователя вида accountName@domain.org</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="accountName">
+				<xs:annotation>
+					<xs:documentation>короткое имя учетной записи</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="fio">
+				<xs:annotation>
+					<xs:documentation>фио</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="surname">
+				<xs:annotation>
+					<xs:documentation>фамилия</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="name">
+				<xs:annotation>
+					<xs:documentation>имя</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="patronymic">
+				<xs:annotation>
+					<xs:documentation>отчество</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="tabNum">
+				<xs:annotation>
+					<xs:documentation>табельный номер</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="email">
+				<xs:annotation>
+					<xs:documentation>адрес электронной почты в формате SMTP или Lotus</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="phone">
+				<xs:annotation>
+					<xs:documentation>телефон</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="room">
+				<xs:annotation>
+					<xs:documentation>номер комнаты</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="postCode">
+				<xs:annotation>
+					<xs:documentation>код должности</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="postName">
+				<xs:annotation>
+					<xs:documentation>наименование должности</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rankCode">
+				<xs:annotation>
+					<xs:documentation>код звания/чина</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rankName">
+				<xs:annotation>
+					<xs:documentation>наименование звания/чина</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="subdivCode">
+				<xs:annotation>
+					<xs:documentation>код подразделения НО</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="subdivName">
+				<xs:annotation>
+					<xs:documentation>наименование подразделения НО</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="region">
+				<xs:annotation>
+					<xs:documentation>двузначный код региона</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ufns">
+				<xs:annotation>
+					<xs:documentation>код УФНС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ifns">
+				<xs:annotation>
+					<xs:documentation>код ИФНС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="divisionCode">
+				<xs:annotation>
+					<xs:documentation>код по СОНО, СНОН или код подведомственной организации</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="orgName">
+				<xs:annotation>
+					<xs:documentation>наименование налогового органа</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="dateIn">
+				<xs:annotation>
+					<xs:documentation>дата приема сотрудника</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="dateOut">
+				<xs:annotation>
+					<xs:documentation>дата увольнения сотрудника</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="restBegin">
+				<xs:annotation>
+					<xs:documentation>дата начала отпуска</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="restEnd">
+				<xs:annotation>
+					<xs:documentation>дата окончания отпуска</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isFku">
+				<xs:annotation>
+					<xs:documentation>признак работника ФКУ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isCa">
+				<xs:annotation>
+					<xs:documentation>признак работника ЦА</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isMi">
+				<xs:annotation>
+					<xs:documentation>признак работника МИ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isService">
+				<xs:annotation>
+					<xs:documentation>признак сервисной УЗ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isSubordinate">
+				<xs:annotation>
+					<xs:documentation>признак УЗ подведомственной организации</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="disabled">
+				<xs:annotation>
+					<xs:documentation>учетная запись отключена</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CurrentUser">
+		<xs:annotation>
+			<xs:documentation>Текущий пользователь (отличается от обычного пользователя только отсутствием ключевых атрибутов)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="userPrincipalName">
+				<xs:annotation>
+					<xs:documentation>имя пользователя вида accountName@domain.org</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="accountName">
+				<xs:annotation>
+					<xs:documentation>короткое имя учетной записи</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="fio">
+				<xs:annotation>
+					<xs:documentation>фио</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="surname">
+				<xs:annotation>
+					<xs:documentation>фамилия</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="name">
+				<xs:annotation>
+					<xs:documentation>имя</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="patronymic">
+				<xs:annotation>
+					<xs:documentation>отчество</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="tabNum">
+				<xs:annotation>
+					<xs:documentation>табельный номер</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="email">
+				<xs:annotation>
+					<xs:documentation>адрес электронной почты в формате SMTP или Lotus</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="phone">
+				<xs:annotation>
+					<xs:documentation>телефон</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="room">
+				<xs:annotation>
+					<xs:documentation>номер комнаты</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="postCode">
+				<xs:annotation>
+					<xs:documentation>код должности</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="postName">
+				<xs:annotation>
+					<xs:documentation>наименование должности</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rankCode">
+				<xs:annotation>
+					<xs:documentation>код звания/чина</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="rankName">
+				<xs:annotation>
+					<xs:documentation>наименование звания/чина</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="subdivCode">
+				<xs:annotation>
+					<xs:documentation>код подразделения НО</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="subdivName">
+				<xs:annotation>
+					<xs:documentation>наименование подразделения НО</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="region">
+				<xs:annotation>
+					<xs:documentation>двузначный код региона</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ufns">
+				<xs:annotation>
+					<xs:documentation>код УФНС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ifns">
+				<xs:annotation>
+					<xs:documentation>код ИФНС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="divisionCode">
+				<xs:annotation>
+					<xs:documentation>код по СОНО, СНОН или код подведомственной организации</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="orgName">
+				<xs:annotation>
+					<xs:documentation>наименование налогового органа</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="dateIn">
+				<xs:annotation>
+					<xs:documentation>дата приема сотрудника</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="dateOut">
+				<xs:annotation>
+					<xs:documentation>дата увольнения сотрудника</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="restBegin">
+				<xs:annotation>
+					<xs:documentation>дата начала отпуска</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="restEnd">
+				<xs:annotation>
+					<xs:documentation>дата окончания отпуска</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isFku">
+				<xs:annotation>
+					<xs:documentation>признак работника ФКУ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isCa">
+				<xs:annotation>
+					<xs:documentation>признак работника ЦА</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isMi">
+				<xs:annotation>
+					<xs:documentation>признак работника МИ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isService">
+				<xs:annotation>
+					<xs:documentation>признак сервисной УЗ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="isSubordinate">
+				<xs:annotation>
+					<xs:documentation>признак УЗ подведомственной организации</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="disabled">
+				<xs:annotation>
+					<xs:documentation>учетная запись отключена</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на пользователя</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="c" type="CsudUserIdType">
+				<xs:annotation>
+					<xs:documentation>Csud User Id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="s" type="SidAdType">
+				<xs:annotation>
+					<xs:documentation>SID AD</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="t" type="PersonnelNumberType">
+				<xs:annotation>
+					<xs:documentation>Табельный номер</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="k" type="KeycloakUserIdType">
+				<xs:annotation>
+					<xs:documentation>keycloak User Id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CurrentUserRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на текущего пользователя</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

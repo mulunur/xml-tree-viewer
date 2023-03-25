@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AzAdminManager MajorVersion="1" MinorVersion="0" Description="Ролевая матрица Отчетность. Аналитические кубы" Guid="5f513018-f40f-4da1-814f-456cd30cfa2d" ApplicationData="">
+	<AzApplication Guid="7550175f-fb14-404c-962c-65dd1491afb1" Name="SMZ" Description="DisplayName=Подсистема &quot;ПП НПД&quot;;AppVersion=1.0.0.0" ApplicationVersion="">
+		<AzOperation Guid="fb6fd80d-3ea9-4637-a75f-5c23d313ce4e" Name="Оп-СМЗ_Кубы" Description="Доступ к ветке кубов в ЕКП">
+			<OperationID>1</OperationID>
+		</AzOperation>
+		<AzOperation Guid="33bb1dfd-2f76-47ac-96ab-a1c694559705" Name="Оп-СМЗ_КубыЦА" Description="Доступ к кубам СМЗ на уровне ЦА">
+			<OperationID>2</OperationID>
+		</AzOperation>
+		<AzOperation Guid="2a9b334d-4249-4ccf-b608-6a7376906c38" Name="Оп-СМЗ_КубыНО" Description="Доступ к кубам СМЗ на уровне НО">
+			<OperationID>3</OperationID>
+		</AzOperation>
+		<AzTask Guid="5ec6b333-3f1b-4d01-9e5e-52054fbb47b1" Name="ФР-СМЗ_КубыЦА" Description="DisplayName=ЦА. Аналитические кубы СМЗ; Context=0;&lt;&lt;Доступ к аналитическим кубам на уровне ЦА (без ограничений по структурному контексту)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>33bb1dfd-2f76-47ac-96ab-a1c694559705</OperationLink>
+			<OperationLink>fb6fd80d-3ea9-4637-a75f-5c23d313ce4e</OperationLink>
+		</AzTask>
+		<AzTask Guid="3ad1373b-c1f9-4994-ad37-e42d3bc181d5" Name="СР-СМЗ_КубыНО" Description="DisplayName=НО. Аналитические кубы СМЗ;Context=2;&lt;&lt;Доступ к аналитическим кубам на уровне НО (с ограничениями в соответствии с указанными в структурном контексте кодами налоговых органов)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>2a9b334d-4249-4ccf-b608-6a7376906c38</OperationLink>
+			<OperationLink>fb6fd80d-3ea9-4637-a75f-5c23d313ce4e</OperationLink>
+		</AzTask>
+		<AzRole Guid="70ea9a3d-22d1-4626-b685-4612287422f0" Name="ФР-СМЗ_КубыЦА">
+			<TaskLink>5ec6b333-3f1b-4d01-9e5e-52054fbb47b1</TaskLink>
+		</AzRole>
+		<AzRole Guid="1479b8fd-ecf5-47a6-ad4f-98651db26c62" Name="СР-СМЗ_КубыНО">
+			<TaskLink>3ad1373b-c1f9-4994-ad37-e42d3bc181d5</TaskLink>
+		</AzRole>
+		<AzScope Guid="8478d583-0ae1-4c6c-88e8-7898066a95c5" Name="7700" Description="">
+			<AzRole Guid="9ae0de81-63a4-4e85-a5ad-ac611b606d5b" Name="СР-СМЗ_КубыНО">
+				<TaskLink>3ad1373b-c1f9-4994-ad37-e42d3bc181d5</TaskLink>
+				<AppMemberLink>df65b3e2-27f1-48de-8b8d-7d8add4cca11</AppMemberLink>
+			</AzRole>
+		</AzScope>
+		<AzOperation Guid="b762c0e4-b638-45b8-8b3b-32ac62637e89" Name="Оп-СМЗ_Отчетность" Description="Доступ к ветке отчетности ПП НПД в ЕКП">
+			<OperationID>4</OperationID>
+		</AzOperation>
+		<AzOperation Guid="03d32eb0-8625-4d19-89e5-6bc05dfe5877" Name="Оп-СМЗ_ОтчетностьЦА" Description="Доступ к отчетности ПП НПД на уровне ЦА">
+			<OperationID>5</OperationID>
+		</AzOperation>
+		<AzTask Guid="77021d74-d79e-40e9-9c12-c08356043558" Name="ФР-СМЗ_ОтчетностьЦА" Description="DisplayName=ЦА. Отчетность ПП НПД;Context=0;&lt;&lt;Доступ к отчетности на уровне ЦА (без ограничений по структурному контексту)&gt;&gt;" BizRuleImportedPath="" RoleDefinition="True">
+			<OperationLink>03d32eb0-8625-4d19-89e5-6bc05dfe5877</OperationLink>
+			<OperationLink>b762c0e4-b638-45b8-8b3b-32ac62637e89</OperationLink>
+		</AzTask>
+		<AzRole Guid="c8adf7c2-c288-40e3-8104-c1ef904a4b60" Name="ФР-СМЗ_ОтчетностьЦА">
+			<TaskLink>77021d74-d79e-40e9-9c12-c08356043558</TaskLink>
+			<AppMemberLink>df65b3e2-27f1-48de-8b8d-7d8add4cca11</AppMemberLink>
+		</AzRole>
+	</AzApplication>
+	<AzApplicationGroup Guid="df65b3e2-27f1-48de-8b8d-7d8add4cca11" Name="Developers" Description="" GroupType="Basic">
+		<BizRuleLanguage/>
+		<Member>S-1-5-21-288006714-2159811191-2066094697-30617</Member>
+		<Member>S-1-5-21-288006714-2159811191-2066094697-30201</Member>
+		<Member>S-1-5-21-288006714-2159811191-2066094697-30618</Member>
+		<Member>S-1-5-21-288006714-2159811191-2066094697-31822</Member>
+	</AzApplicationGroup>
+</AzAdminManager>

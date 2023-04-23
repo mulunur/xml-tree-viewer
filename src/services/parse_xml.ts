@@ -1,6 +1,4 @@
 
-import React, { useState } from "react";
-
 export function parseInputXML(inputXML:string) {
     const parser = new DOMParser();
     const objDOM = parser.parseFromString(inputXML, "text/xml");

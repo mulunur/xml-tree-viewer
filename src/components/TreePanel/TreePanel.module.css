@@ -1,0 +1,10 @@
+.panel {
+    background-color: rgb(210, 238, 174);
+    flex-basis: 30%;
+    /* height: 90%;  */
+    min-width: 300px;
+    min-height: 300px;
+    border: 1px solid black;
+    align-self: stretch;
+  }
+  

@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import { Props, Node, parseInputXML } from "./parse_xml";
+import { Props, Node, parseInputXML } from "../../services/parse_xml";
 
-function TreeView({ xml }: Props) {
+interface TreeViewProps {
+  xmlFile: string
+}
+
+export function TreeView ({xmlFile} : TreeViewProps) {
+
+
     const [expanded, setExpanded] = useState(false);
-  
+
     const handleToggle = () => {
       setExpanded(!expanded);
+
     };
-  
+
     const renderNode = (node: Node) => {
       const children = node.children;
       const hasChildren = children.length > 0;
-  
+
       return (
         <div key={node.id}>
           <div onClick={handleToggle}>
@@ -26,9 +33,8 @@ function TreeView({ xml }: Props) {
         </div>
       );
     };
-  
-    const tree = parseInputXML(xml);
+
+
+    const tree = parseInputXML(xmlFile);
     return <div>{tree.children.map((node: Node) => renderNode(node))}</div>;
   }
-
-export default TreeView;

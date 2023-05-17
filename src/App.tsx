@@ -41,7 +41,7 @@ function App() {
   const [file, setFile] = useState("")
 
   const fetchFile = async () => {
-    const result = await window.electron.hello();
+    const result = await window.electron.openFile();
     setFile(result)
   }
   

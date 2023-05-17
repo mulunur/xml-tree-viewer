@@ -15,7 +15,7 @@ let textarea = document.getElementById('opened-file') as HTMLInputElement;
 
 contextBridge.exposeInMainWorld('electron', {
     loadPreferences: () => ipcRenderer.invoke('load-prefs'),
-    hello: () => ipcRenderer.invoke('hello').then(async (result) => {console.log(result);return result}),
+    openFile: () => ipcRenderer.invoke('openFile').then(async (result) => {console.log(result);return result}),
     homeDir: () => {console.log("some function in contextbridge")},
     xmlFile: openedFilePath,
     onOpenFile: (callback: (args: any) => any) => ipcRenderer.on('opened-file', callback)

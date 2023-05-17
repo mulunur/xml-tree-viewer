@@ -1,6 +1,6 @@
 
 export interface IElectronAPI {
-    hello: () => any,
+    openFile: () => any,
 }
 
 declare global {

@@ -1,7 +1,7 @@
 import { app, BrowserWindow, dialog, Menu, ipcMain } from 'electron';
 import { readFile, readFileSync } from 'fs';
 import * as path from 'path';
-// import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+import {validateSchema} from '../src/services/validate_xml'
 
 let mainWindow: BrowserWindow
 
@@ -118,7 +118,7 @@ app.whenReady().then(() => {
   });
 });
 
-ipcMain.handle("hello", async (event, message) => {
+ipcMain.handle("openFile", async (event, message) => {
   const selectedFile = await dialog.showOpenDialog({
     properties: ['openFile'], filters: [{ name: "XML", extensions: ['xml'] }]
   })
@@ -131,5 +131,6 @@ ipcMain.handle("hello", async (event, message) => {
   // })
   const file = selectedFile.filePaths[0]
   const contents = readFileSync(file, 'utf-8')
+  validateSchema(contents)
   return contents
 })

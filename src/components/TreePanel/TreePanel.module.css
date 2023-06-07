@@ -1,10 +1,14 @@
 .panel {
     background-color: rgb(255, 255, 255);
+    /* размер панели */
     flex-basis: 30%;
-    /* height: 90%;  */
-    min-width: 300px;
-    min-height: 300px;
+    height: 90vh;  
+    /*min-width: 300px;
+    min-height: 300px;*/
     border: 1px solid black;
+    /*растягивание по контенту и скроллинг*/
     align-self: stretch;
+    overflow-y: auto;
+    resize: horizontal;
   }
   

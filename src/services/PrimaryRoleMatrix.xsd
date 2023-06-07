@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by MESMERiZE (MSM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PrimaryRoleMatrix">
+		<xs:annotation>
+			<xs:documentation>Первичная ролевая матрица</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Source"/>
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Subsystem" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="CodeType">
+		<xs:annotation>
+			<xs:documentation>Код</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="127"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DescriptionType">
+		<xs:annotation>
+			<xs:documentation>Описание</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DisplayNameType">
+		<xs:annotation>
+			<xs:documentation>Отображаемое наименование</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameType">
+		<xs:annotation>
+			<xs:documentation>Наименование</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SemVerType">
+		<xs:annotation>
+			<xs:documentation>SemVer (Semantic Versioning 2.0.0)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-((0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(\+([0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*))?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Source">
+		<xs:annotation>
+			<xs:documentation>Источник. Описывает, откуда был загружен родительский элемент.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="version" type="SemVerType" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="sourceFileName" use="required">
+				<xs:annotation>
+					<xs:documentation>Имя файла</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="sourceFileModifyDate" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата последней модификации файла</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Subsystem">
+		<xs:annotation>
+			<xs:documentation>Подсистема</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Source"/>
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Actions" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Process" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Attributes" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Kind" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Contexts" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Context" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Контекст</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element ref="AttributeRef" minOccurs="0" maxOccurs="unbounded"/>
+										</xs:sequence>
+										<xs:attribute name="code" type="CodeType" use="required">
+											<xs:annotation>
+												<xs:documentation>Код</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="displayName" type="DisplayNameType" use="required">
+											<xs:annotation>
+												<xs:documentation>Отображаемое наименование</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="description" type="DescriptionType">
+											<xs:annotation>
+												<xs:documentation>Описание</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Operations" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Operation" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Roles" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Role" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="version" type="SemVerType" use="required">
+				<xs:annotation>
+					<xs:documentation>Версия</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Attribute">
+		<xs:annotation>
+			<xs:documentation>Атрибут</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="code" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="displayName" type="DisplayNameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Отображаемое наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Kind">
+		<xs:annotation>
+			<xs:documentation>Тип атрибута</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Attribute" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="code" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="displayName" type="DisplayNameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Отображаемое наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Operation">
+		<xs:annotation>
+			<xs:documentation>Операция</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="AttributeRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Role">
+		<xs:annotation>
+			<xs:documentation>Роль</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="AttributeRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="OperationRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="RoleRef" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="displayName" type="DisplayNameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Отображаемое наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Process">
+		<xs:annotation>
+			<xs:documentation>Процесс</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="AttributeRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Action" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Действие</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="AttributeRef" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element ref="ContextRef" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:attribute name="name" type="NameType" use="required">
+								<xs:annotation>
+									<xs:documentation>Наименование</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="displayName" type="DisplayNameType" use="required">
+								<xs:annotation>
+									<xs:documentation>Отображаемое наименование</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="description" type="DescriptionType">
+								<xs:annotation>
+									<xs:documentation>Описание</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="displayName" type="DisplayNameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Отображаемое наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="description" type="DescriptionType">
+				<xs:annotation>
+					<xs:documentation>Описание</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Property">
+		<xs:annotation>
+			<xs:documentation>Расширенное свойство. Значение указывается в виде текста внутри элемента.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="name" use="required">
+						<xs:annotation>
+							<xs:documentation>Наименование</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alert">
+		<xs:annotation>
+			<xs:documentation>Уведомление/сообщение.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" use="required">
+						<xs:annotation>
+							<xs:documentation>Тип уведомления: сообщение, предупреждение, ошибка.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceFileName" use="required">
+						<xs:annotation>
+							<xs:documentation>Имя исходного файла, откуда был загружен элемент.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceLineNumber" use="required">
+						<xs:annotation>
+							<xs:documentation>Номер строки в исходном файле.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="sourceLinePosition" use="required">
+						<xs:annotation>
+							<xs:documentation>Позиция в строке в исходном файле.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Alerts">
+		<xs:annotation>
+			<xs:documentation>Уведомления.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="LoadAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления загрузки.
+Примечание: накопительные -- при загрузке уведомления такого рода, имеющиеся в исходном файле, не очищаются.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="MergeAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления слияния.
+Примечание: накопительные -- перед слиянием уведомления такого рода, имеющиеся в исходном файле, не очищаются.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ValidateAlerts">
+						<xs:annotation>
+							<xs:documentation>Уведомления, сформированные во время (последней) проверки.
+Примечание: НЕ накопительные -- перед запуском очередной проверки уведомления такого рода очищаются у всех элементов матрицы.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element ref="Alert" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttributeRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на атрибут</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="kind" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код типа</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="code" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContextRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на контекст</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="code" type="CodeType" use="required">
+				<xs:annotation>
+					<xs:documentation>Код</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на операцию</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoleRef">
+		<xs:annotation>
+			<xs:documentation>Ссылка на роль</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Alerts" minOccurs="0"/>
+					<xs:element ref="Property" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="name" type="NameType" use="required">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

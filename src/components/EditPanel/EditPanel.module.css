@@ -1,8 +1,59 @@
 .panel {
     background-color: rgb(218, 218, 218);
+    height: 90vh; 
     flex-basis: 70%;
-    min-width: 500px;
-    min-height: 300px;
+    /*min-width: 500px;
+    min-height: 300px;*/
     border: 1px solid black;
+    overflow-y: auto
   }
+
+.form {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.divWithInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   
+}
+
+.label {
+  float: left;
+  width: 200px;
+  padding-right: 24px;
+  font-size: medium;
+  font-weight: bold;
+
+}
+
+.inputAttribute {
+  float: left;
+  align-self: center;
+  height: fit-content;
+}
+
+.inputTextContent {
+  float: left;
+  align-self: center;
+  height: fit-content;
+}
+
+.p {
+  font-size: medium;
+  font-weight:normal;
+  padding-right: 15px;
+  height: fit-content;
+}
+
+
+.submit {
+  width: fit-content;
+  float: left;
+  text-align: center;
+}

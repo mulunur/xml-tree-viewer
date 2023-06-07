@@ -1,62 +1,46 @@
-import logo from './logo.svg';
 import styles from './App.module.css';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 import { TreePanel } from './components/TreePanel/TreePanel';
 import { EditPanel } from './components/EditPanel/EditPanel';
 import { ButtonsPanel } from './components/ButtonsPanel/ButtonsPanel';
-// import {IpcRenderer, ipcRenderer} from 'electron';
-
-
-// declare global {
-//   interface Window {
-//     //require: (module: 'electron') => {
-//       ipcRenderer: IpcRenderer
-//     //};
-//   }
-// }
-
-//const { ipcRenderer } = window.require('electron');
-//******* */
-// export interface IElectronAPI {
-//     loadPreferences: () => Promise<void>,
-    
-//   }
-
-//*** */
-  
-//   declare global {
-//     interface Window {
-//       electronAPI: IElectronAPI
-//     }
-//   }
-
-// //   //invoke load-prefs
-//   //  window.electronAPI.loadPreferences()
-
-
-
+import { parseInputXML } from './services/parse_xml';
+import { Node } from './services/parse_xml';
 
 function App() {
   const [file, setFile] = useState("")
+  const [xmlTree, setXmlTree] = useState<Node>(createInitialTree())
+  const [selectedNode, setSelectedNode] = useState<Node>()
+
+  const handleNodeSelect = (node: Node) => {
+    setSelectedNode(node);
+    console.log(node.tagName)
+  };
 
   const fetchFile = async () => {
     const result = await window.electron.openFile();
     setFile(result)
+    let parsedXmlTree = parseInputXML(file)
+    setXmlTree(parsedXmlTree);
   }
-  
+
+  function createInitialTree() {
+    return {
+      id: "id",
+      tagName: "tagName",
+      children: [],
+      attributeNames: []
+    }
+  }
+
+  //setXmlTree(parseInputXML(file));
+
   return (
     <div className={styles.App}>
-      {/* { <header className="App-header">
-      </header> } */}
-        <h3 id='file-path'></h3>
-        <ButtonsPanel getFile={fetchFile}/>
-        <div className={styles.Layout}>
-          <TreePanel file={file}/>
-          <EditPanel/>
-        </div>
-        {/* <button onClick={fetchFile}>Открыть ролевую матрицу</button> */}
-        {/* <textarea id='opened-file' value={file}></textarea> */}
+      <ButtonsPanel getFile={fetchFile} />
+      <div className={styles.Layout}>
+        <TreePanel file={file} tree={xmlTree} onNodeSelect={handleNodeSelect} />
+        <EditPanel selectedNode={selectedNode} />
+      </div>
     </div>
   );
 }
